@@ -1,0 +1,18 @@
+- hosts: terraform-ansible
+  tasks:
+  - name: criando o arquivo
+    copy:
+      dest: /home/ubuntu/index.html
+      content: <!DOCTYPE html>
+                <html>
+                <head>
+                <meta charset="UTF-8">
+                </head>
+                <body>
+
+                <h1 style="color:red; text-align:center;">Parabéns Marciany Lopes Pereira você acaba de ganhar 500 mil reais. &#127881; &#127881; &#127881;</h1>
+                
+                </body>
+                </html>
+  - name: criando o servidor
+    shell: "nohup busybox httpd -f -p 8080 &"
